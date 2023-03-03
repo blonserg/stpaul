@@ -1,4 +1,3 @@
-import BLOG from '@/blog.config'
 import Link from 'next/link'
 import Avatar from './NotionAvatar.js'
 import Social from '../Common/Social.js'
@@ -7,28 +6,23 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import {
   MailIcon,
-  RssIcon,
+  CalendarIcon,
   ClipboardCheckIcon
 } from '@heroicons/react/outline'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
+import GoogleCalendar from '@/components/Calendar'
 
 const Collection = dynamic(() =>
   import('react-notion-x/build/third-party/collection').then((m) => m.Collection), { ssr: true }
 )
 
 const Hero = ({ blockMap }) => {
-  const [showCopied, setShowCopied] = useState(false)
+  const [showCopied] = useState(false)
   const { locale } = useRouter()
   const t = lang[locale]
 
-  const clickCopy = async () => {
-    setShowCopied(true)
-    navigator.clipboard.writeText(BLOG.link + '/feed')
-    setTimeout(() => {
-      setShowCopied(false)
-    }, 1000)
-  }
+  const [showBlock, setShowBlock] = useState(false)
 
   return (
     <>
@@ -69,15 +63,15 @@ const Hero = ({ blockMap }) => {
               </button>
             ) : (
               <button
-                onClick={() => clickCopy()}
+                onClick={() => setShowBlock(true)}
                 className='bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 inline-flex py-3 px-5 rounded-lg items-center'
               >
-                <RssIcon className='inline-block text-gray-600 dark:text-day h-7 w-7' />
+                <CalendarIcon className='inline-block text-gray-600 dark:text-day h-7 w-7' />
                 <span className='ml-4 flex items-start flex-col leading-none'>
                   <span className='text-xs text-gray-600 dark:text-day mb-1'>
-                    {t.HERO.RSS_BUTTON_DES}
+                    {t.HERO.CALENDAR.CALENDAR_BUTTON_DES}
                   </span>
-                  <span className='font-medium'>{t.HERO.HOME.RSS_BUTTON}</span>
+                  <span className='font-medium'>{t.HERO.CALENDAR.CALENDAR_BUTTON}</span>
                 </span>
               </button>
             )}
@@ -86,6 +80,9 @@ const Hero = ({ blockMap }) => {
         <div className='w-2/5'>
           <Avatar className='text-gray-600 dark:text-gray-300' />
         </div>
+      </div>
+      <div className='container mb-10'>
+        {showBlock && <GoogleCalendar />}
       </div>
     </>
   )
