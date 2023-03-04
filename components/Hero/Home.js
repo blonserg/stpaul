@@ -42,7 +42,7 @@ const Hero = ({ blockMap }) => {
                   <span className='text-xs text-gray-600 dark:text-day mb-1'>
                     {t.HERO.HOME.CONTACT_BUTTON_DES}
                   </span>
-                  <span className='font-medium'>{t.HERO.HOME.CONTACT_BUTTON}</span>
+                  <span className='font-medium whitespace-nowrap'>{t.HERO.HOME.CONTACT_BUTTON}</span>
                 </span>
               </button>
             </Link>
@@ -56,7 +56,7 @@ const Hero = ({ blockMap }) => {
                   <span className='text-xs text-gray-600 dark:text-day mb-1'>
                     {t.HERO.RSS_BUTTON_DES_COPIED}
                   </span>
-                  <span className='font-medium'>
+                  <span className='font-medium whitespace-nowrap'>
                     {t.HERO.RSS_BUTTON_COPIED}
                   </span>
                 </span>
@@ -77,7 +77,7 @@ const Hero = ({ blockMap }) => {
             )}
           </div>
         </div>
-        <div className='w-2/5'>
+        <div className='w-2/5 -z-1'>
           <Avatar className='text-gray-600 dark:text-gray-300' />
         </div>
       </div>

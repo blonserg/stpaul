@@ -27,8 +27,9 @@ const BLOG = {
   ogImageGenerateHost: 'og-zl.vercel.app', // The link to generate OG image, don't end with a slash
   defaultCover: '/cover.jpg',
   socialLink: {
-    twitter: 'https://twitter.com/izuolan',
-    github: 'https://github.com/izuolan',
+    facebook: 'https://www.facebook.com/RussianProtestantChurchAntalya',
+    instagram: 'https://www.instagram.com/spsf_antalya/',
+    youtube: 'https://www.youtube.com/channel/UCX-B_zpcTTX3TYX2uVvRedg',
     telegram: 'https://t.me/zuolan'
   },
   seo: {
