@@ -4,8 +4,6 @@ import { lang } from '@/lib/lang'
 import { useRouter } from 'next/router'
 import {
   UserIcon,
-  UsersIcon,
-  BookOpenIcon,
   MailIcon
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
