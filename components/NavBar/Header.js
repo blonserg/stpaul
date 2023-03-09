@@ -8,7 +8,8 @@ import {
   UserIcon,
   SearchIcon,
   MenuIcon,
-  GlobeAltIcon
+  GlobeAltIcon,
+  MapIcon
 } from '@heroicons/react/outline'
 import Social from '../Common/Social.js'
 import ThemeSwitcher from './ThemeSwitcher.js'
@@ -43,8 +44,15 @@ const NavBar = () => {
       icon: <UserIcon className='inline-block mb-1 h-5 w-5' />,
       show: true
     },
+    {
+      id: 2,
+      name: t.NAV.WHERE,
+      to: '/address',
+      icon: <MapIcon className='inline-block mb-1 h-5 w-5' />,
+      show: BLOG.pagesShow.address
+    },
     // {
-    //   id: 1,
+    //   id: 2,
     //   name: t.NAV.NEWSLETTER,
     //   to: '/newsletter',
     //   icon: <NewspaperIcon className='inline-block mb-1 h-5 w-5' />,
@@ -57,13 +65,6 @@ const NavBar = () => {
     //   icon: <CollectionIcon className='inline-block mb-1 h-5 w-5' />,
     //   show: BLOG.pagesShow.notes
     // },
-    // {
-    //   id: 3,
-    //   name: t.NAV.PROJECTS,
-    //   to: '/projects',
-    //   icon: <SparklesIcon className='inline-block mb-1 h-5 w-5' />,
-    //   show: BLOG.pagesShow.projects
-    // },
     {
       id: 4,
       name: t.NAV.SEARCH,
@@ -71,6 +72,13 @@ const NavBar = () => {
       icon: <SearchIcon className='inline-block mb-1 h-5 w-5' />,
       show: true
     }
+    // {
+    //   id: 5,
+    //   name: t.NAV.PROJECTS,
+    //   to: '/projects',
+    //   icon: <SparklesIcon className='inline-block mb-1 h-5 w-5' />,
+    //   show: BLOG.pagesShow.projects
+    // }
   ]
   return (
     <motion.div className='flex'>
