@@ -20,7 +20,8 @@ const BLOG = {
     projects: true,
     contact: true,
     books: true,
-    friends: true
+    friends: true,
+    address: true
   },
   previewImagesEnabled: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
